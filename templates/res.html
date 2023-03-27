@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/main.css', ) }}">
+
+
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1> Sarcastic Or Not </h1>
+				<p>Hey!!! If you're in doubt whether a headline is sarcastic,
+					drop it below and let the AI tell you what it is. </p>
+			</header>
+
+		<!-- Signup Form -->
+			    <div id="main">
+					<section id="one">
+						<header class="major">
+							<h2>Enter a Headline</h2>
+						</header>
+
+						<form action="{{ url_for('predict')}}" method="post" id="signup-form">
+							<input type="text" name="headline" placeholder="Drop Headline Here!" />
+							<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+						</form>
+						{% if prediction_str == "1" %}
+						   <p>DON'T TAKE IT SERIOUSLY BECAUSE IT IS A SARCASTIC HEADLINE !</p>
+						{% else %}
+						   <p>UPSS ! NO SARCASM HERE</p>
+						{% endif %}
+					</section>
+				</div>
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/ecem_ay?s=11&t=h6bT7s8FF-lemwSnTJxM_Q" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/ecemay" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="ecemay367@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; EcemAy.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
